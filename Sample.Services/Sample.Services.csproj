@@ -7,7 +7,6 @@
     <PackageReference Include="AutoMapper" Version="10.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sample.Data\Sample.Data.csproj" />
     <ProjectReference Include="..\Sample.Models\Sample.Models.csproj" />
   </ItemGroup>
 

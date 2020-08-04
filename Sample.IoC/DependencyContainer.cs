@@ -5,6 +5,7 @@ using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using Sample.Data;
 using Sample.Services.Dto;
+using Sample.Services.Interfaces;
 
 namespace Sample.IoC
 {
@@ -13,6 +14,7 @@ namespace Sample.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>();
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             var mappingConfig = new MapperConfiguration(mc => { mc.AddProfile(new MappingProfile()); });
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
